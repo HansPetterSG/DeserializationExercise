@@ -1,0 +1,11 @@
+The primary bottleneck of this application occurs when there are loops and loops within loops, which happens several
+times in instances where one substring is iterated on several times: for example, there are instances where the contents
+of parentheses are extracted through an iterative process which extracts each character until the parentheses is
+closed, after which the isolated content is itself used iteratively. This time consuming element may be reduced with
+greater knowledge at first iteration of the nature of the substring being parsed, and theoretically it could be possible
+for the application to only need to iterate through the String once, though this seems unlikely to be possible in this
+context, especially with significant performance benefits.
+
+The performance may also be somewhat reduced by the increased overhead required in relation to some variables needing to
+be Objects instead of more specific types becuase the data structure is described as being capable of containing
+several types of data within many of its fields, though this is probably not a significant increase.
